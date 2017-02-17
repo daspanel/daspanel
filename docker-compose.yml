@@ -1,0 +1,128 @@
+version: '2'
+services:
+    daspanel-services:
+        image: daspanel/daspanel-services
+        volumes:
+            - /opt/daspanel/services
+        networks:
+            - backend
+        command:
+            - /bin/true
+    daspanel-s3-server:
+    #s3.daspanel.site:
+        image: daspanel/minio-fileserver
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        networks:
+            - backend
+        expose:
+            - "9000"
+        env_file:
+            - daspanel.env
+            - smtp.env
+    daspanel-mariadb:
+        image: daspanel/mariadb
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        networks:
+            backend:
+                aliases:
+                    - daspanel-mysql
+        expose:
+            - "3306"
+        environment:
+            - MARIADB_REMOTE_ROOT=true
+        env_file:
+            - daspanel.env
+            - smtp.env
+    daspanel-php-fpm-5.6:
+        image: daspanel/php-fpm-5.6
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        networks:
+            - backend
+        expose:
+            - "9000"
+        env_file:
+            - daspanel.env
+            - smtp.env
+    daspanel-php-fpm-7.0:
+        image: daspanel/php-fpm-7.0
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        volumes_from:
+            - daspanel-services:ro
+        networks:
+            - backend
+        expose:
+            - "9000"
+        env_file:
+            - daspanel.env
+            - smtp.env
+    daspanel-caddy-http-server:
+        image: daspanel/caddy-http-server
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        volumes_from:
+            - daspanel-services:ro
+        networks:
+            - frontend
+            - backend
+        ports:
+            - "80:80"
+            - "443:443"
+        env_file:
+            - daspanel.env
+            - smtp.env
+    daspanel-api:
+        image: daspanel/api-server:latest-dev
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        networks:
+            - frontend
+            - backend
+        environment:
+            - LOCAL_USER_ID=1000
+            - GUNICORN_APP_DIR=/opt/daspanel/apps/apiserver/api_server
+            - GUNICORN_CMD=/opt/daspanel/apps/apiserver/api_server/wsgi_gunicorn --bind=0.0.0.0:8080 --user=daspanel --group=daspanel api-connexion:app Daspanel_Api_Server
+        env_file:
+            - daspanel.env
+            - smtp.env
+        expose:
+            - "5000"
+            - "8080"
+    daspanel-panel:
+        image: daspanel/panel:latest-dev
+        volumes:
+            - daspanel-data:/opt/daspanel/data
+        networks:
+            - frontend
+            - backend
+        environment:
+            - LOCAL_USER_ID=1000
+            - GUNICORN_APP_DIR=/opt/daspanel/apps/panel/daspanel_web
+            - GUNICORN_CMD=su-exec daspanel:daspanel python /opt/daspanel/apps/panel/wsgi.py
+        env_file:
+            - daspanel.env
+            - smtp.env
+        expose:
+            - "5000"
+
+volumes:
+    #daspanel-data:
+    #    external:
+    #        name: daspanel-data
+    daspanel-data:
+        driver: local
+        driver_opts:
+            type: none
+            device: ./data
+            o: bind
+
+networks:  
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+
