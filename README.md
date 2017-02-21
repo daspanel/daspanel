@@ -18,7 +18,7 @@ Warning: This is an early stage project with a lot of bug's.
 https://github.com/daspanel/panel/archive/master.zip
 
 2) Get a Daspanel UUID for your test. This UUID must be of the type 
-[CUID]("https://github.com/ericelliott/cuid" target="_blank")
+[CUID](https://github.com/ericelliott/cuid, target="_blank")
 
 A) You can get one online via http://getuuid.com
 B) Or, download the contents of this 
