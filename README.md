@@ -47,5 +47,15 @@ docker-compose up -d
 8) use the values of DASPANEL_MASTER_EMAIL and DASPANEL_MASTER_EMAIL to login in the control panel GUI
 
 9) Go to the site modules and add new site using the "+" icone.
+* Write an description for your new site
+* Choose 'Grav' as Type
+* And 'PHP 7.0' as Engine
 
-10) Install content in the new site using the displayed
+10) After save the new site, install some content on it using the displayed 
+form:
+* If you crated thsi new site of the type Grav put in the form field 'URL' this 
+URL: https://getgrav.org/download/core/grav-admin/1.1.17
+
+11) If all goes fine you can click in the preview button of the site and got in 
+a new browser window the newly created Grav site. Enjoy!
+
