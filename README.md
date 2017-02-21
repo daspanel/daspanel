@@ -59,3 +59,9 @@ address: https://getgrav.org/download/core/grav-admin/1.1.17
 11) If all goes fine you can click in the preview button of the site and got in 
 a new browser window the newly created Grav site. Enjoy!
 
+12) Every site is a card, in every card you have basic comamand's like edit, 
+preview and delete. Every card can have one or more slide's like About, Control 
+Redirects, etc, and you can navigate in each slide using the list just above 
+the footer of the slide.
+
+
