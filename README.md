@@ -19,11 +19,11 @@ https://github.com/daspanel/panel/archive/master.zip
 
 2) Get a Daspanel UUID for your test. This UUID must be of the type 
 [CUID](https://github.com/ericelliott/cuid)
-
-A) You can get one online via http://getuuid.com
-B) Or, download the contents of this 
-https://github.com/daspanel/getuuid.github.io/archive/master.zip project and 
-open the index.html file in your browser (it's the source code of getuuid.com).
+* You can get one online via [CUID](http://getuuid.com)
+* Or, download the contents of 
+[GETUUID Project](https://github.com/daspanel/getuuid.github.io/archive/master.zip)
+, unzip it and open the index.html file in your browser (it's the source code 
+of getuuid.com).
 
 3) Edit the daspanel.env file and modify:
 A) DASPANEL_GUUID = the UUID you obtained earlier
