@@ -19,21 +19,21 @@ https://github.com/daspanel/panel/archive/master.zip
 
 2) Get a Daspanel UUID for your test. This UUID must be of the type 
 [CUID](https://github.com/ericelliott/cuid)
-* You can get one online via [CUID](http://getuuid.com)
+* You can get one online using [getuuid.com](http://getuuid.com)
 * Or, download the contents of 
-[GETUUID Project](https://github.com/daspanel/getuuid.github.io/archive/master.zip)
+[GETUUID Project](https://github.com/daspanel/daspanel/archive/master.zip)
 , unzip it and open the index.html file in your browser (it's the source code 
 of getuuid.com).
 
-3) Edit the daspanel.env file and modify:
-A) DASPANEL_GUUID = the UUID you obtained earlier
-B) DASPANEL_MASTER_PASSWORD = The password you want to use as admin
-C) DASPANEL_MASTER_EMAIL = your email. It will be used to login to the panel and as recipient of notifications messages
+3) Edit the daspanel.env file and set:
+* DASPANEL_GUUID = the UUID you obtained earlier
+* DASPANEL_MASTER_PASSWORD = The password you want to use as admin
+* DASPANEL_MASTER_EMAIL = your email. It will be used to login to the panel and as recipient of notifications messages
 
 4) Edit the smtp.env file and modify:
-A) DASPANEL_MAIL_SERVER = the SMTP server address. Must be in server.com:port format
-B) DASPANEL_MAIL_USER = the user is used to log in to the SMTP server. Normally something like user@domain.com
-C) DASPANEL_MAIL_PWD = the user's password on the SMTP server.
+* DASPANEL_MAIL_SERVER = the SMTP server address. Must be in server.com:port format
+* DASPANEL_MAIL_USER = the user is used to log in to the SMTP server. Normally something like user@domain.com
+* DASPANEL_MAIL_PWD = the user's password on the SMTP server.
 
 5) Open an shell and go to the directory where is the file docker-compose.yml
 
