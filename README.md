@@ -44,7 +44,7 @@ docker-compose up -d
 
 7) Open this URL in your browser: http://admin.daspanel.site
 
-8) use the values of DASPANEL_MASTER_EMAIL and DASPANEL_MASTER_EMAIL to login in the control panel GUI
+8) use the values of DASPANEL_MASTER_EMAIL and DASPANEL_MASTER_PASSWORD to login in the control panel GUI
 
 9) Go to the site modules and add new site using the "+" icone.
 * Write an description for your new site
