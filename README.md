@@ -15,13 +15,13 @@ Warning: This is an early stage project with a lot of bug's.
 ## How to test
 
 1) Download and unzip the project zip file from 
-https://github.com/daspanel/panel/archive/master.zip
+https://github.com/daspanel/daspanel/archive/master.zip
 
 2) Get a Daspanel UUID for your test. This UUID must be of the type 
 [CUID](https://github.com/ericelliott/cuid)
 * You can get one online using [getuuid.com](http://getuuid.com)
 * Or, download the contents of 
-[GETUUID Project](https://github.com/daspanel/daspanel/archive/master.zip)
+[GETUUID Project](https://github.com/daspanel/getuuid.github.io)
 , unzip it and open the index.html file in your browser (it's the source code 
 of getuuid.com).
 
