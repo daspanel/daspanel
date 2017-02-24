@@ -64,4 +64,30 @@ preview and delete. Every card can have one or more slide's like About, Control,
 Versions, Redirects, etc, and you can navigate in each slide using horizontal nav list 
 just above the footer of the slide.
 
+### If you want to create a wordpress website follow these steps: ###
+
+1) Go to the site modules and add new site using the "+" icone.
+* Write an description for your new site
+* Choose 'Wordpress' as Type
+* And 'PHP 7.0' as Engine
+
+2) After saved this new site, install some content on it using the displayed 
+form:
+* Put in the form field 'URL' this 
+address: http://wordpress.org/latest.zip
+
+3) In another browser window open this URL: http://adminer.svc.daspanel.site
+
+4) Login in Adminer with:
+* Server = daspanel-mariadb
+* User = root
+* Password = The value you set in DASPANEL_MASTER_PASSWORD on the daspanel.env file
+
+5) Create new DB for Wordpress
+
+6) Back to the daspanel site list click on the Preview buttom of the Wordpress site
+
+7) Complete the Wordpress setup. Remember, teh database server is 'daspanel-mariadb'
+
+8) Back to the sites list in Daspanel click on the Previe
 
