@@ -1,16 +1,27 @@
 # Daspanel - WIP
 
+In a world dominated by cloud computing and the use of Docker containers, 
+site hosting continues to be done mostly using tools like Cpanel or Plesk. 
+Some of these tools were created in the 1990s (The Cpanel was created in 1996), 
+and perhaps the time has come when they are no longer so relevant to the 
+hosting business.
+
+Website site designers and hosting companies need tools more appropriate to 
+the technology we have available today.
+
+DASPANEL is a proposal for a new model of development and hosting of websites.
 This is the first version of Daspanel. It is an exciting step forward towards 
 making an hosting control panel using Docker. We created it so that you can 
 create any site, plain or using PHP, in your local machine and when ready easy 
 deploy it on an public server exactly as you see it in the development machine.
 
+This software is still in a pre alpha stage but, stay tuned for interesting 
+news soon.
+
 Build something great!
 
 * Free software: MIT license
 * Documentation: <https://daspanel.github.io>
-
-Warning: This is an early stage project with a lot of bug's.
 
 ## How to test
 
