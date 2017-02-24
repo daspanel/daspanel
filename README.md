@@ -43,7 +43,7 @@ docker-compose up -d
 ```
 
 7) Open this URL in your browser: http://admin.daspanel.site
-* daspanel.site is an domain thata always resolve any address to 127.0.0.1. 
+* daspanel.site is an domain that always resolve any address to 127.0.0.1. 
 Using it you dont need to change your computar host file to use Daspanel in 
 your local computer.
 
