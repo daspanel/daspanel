@@ -1,15 +1,6 @@
 version: '2'
 services:
-    daspanel-services:
-        image: daspanel/daspanel-services
-        volumes:
-            - /opt/daspanel/services
-        networks:
-            - backend
-        command:
-            - /bin/true
-    daspanel-s3-server:
-    #s3.daspanel.site:
+    daspanel-storage:
         image: daspanel/minio-fileserver
         volumes:
             - ./data:/opt/daspanel/data
@@ -20,6 +11,16 @@ services:
         env_file:
             - daspanel.env
             - smtp.env
+    daspanel-services:
+        image: daspanel/daspanel-services
+        volumes:
+            - /opt/daspanel/services
+        networks:
+            - backend
+        command:
+            - /bin/true
+        depends_on:
+            - daspanel-storage
     daspanel-mariadb:
         image: daspanel/mariadb
         volumes:
@@ -35,6 +36,8 @@ services:
         env_file:
             - daspanel.env
             - smtp.env
+        depends_on:
+            - daspanel-storage
     daspanel-php-fpm-5.6:
         image: daspanel/php-fpm-5.6
         volumes:
@@ -46,6 +49,8 @@ services:
         env_file:
             - daspanel.env
             - smtp.env
+        depends_on:
+            - daspanel-storage
     daspanel-php-fpm-7.0:
         image: daspanel/php-fpm-7.0
         volumes:
@@ -59,6 +64,8 @@ services:
         env_file:
             - daspanel.env
             - smtp.env
+        depends_on:
+            - daspanel-storage
     daspanel-caddy-http-server:
         image: daspanel/caddy-http-server
         volumes:
@@ -74,6 +81,8 @@ services:
         env_file:
             - daspanel.env
             - smtp.env
+        depends_on:
+            - daspanel-storage
     daspanel-api:
         image: daspanel/api-server:latest-dev
         volumes:
@@ -91,6 +100,8 @@ services:
         expose:
             - "5000"
             - "8080"
+        depends_on:
+            - daspanel-storage
     daspanel-panel:
         image: daspanel/panel:latest-dev
         volumes:
@@ -124,5 +135,4 @@ networks:
     driver: bridge
   backend:
     driver: bridge
-
 
