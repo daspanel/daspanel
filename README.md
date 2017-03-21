@@ -40,14 +40,14 @@ Follow the appropriate instructions for your computer in one of the links below:
 
 ### Create sites
 
-* [Wordpress]()
-* [Grav]()
-* [Static HTML/Js]()
+* [Wordpress](http://docs.daspanel.com/howto/wp)
+* [Grav](http://docs.daspanel.com/howto/grav)
+* [Static HTML/Js](http://docs.daspanel.com/howto/htmljs)
 
 ### Services
 
-* [Database manager]()
-* [File manager]()
+* [Database manager](http://docs.daspanel.com/help/services/adminer)
+* [File manager](http://docs.daspanel.com/help/services/filemanager)
 
 ## Why Daspanel ?
 
