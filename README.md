@@ -13,6 +13,9 @@ Free, open-source, server agnostic, self-hosted web hosting control panel using 
 * All services run using Docker containers on Linux, Windows or Mac hosts.
 * [API First](https://dzone.com/articles/an-api-first-development-approach-1)
 * Web interface that works on desktop browsers, smartphones and tablets.
+* PHP 7 AND PHP 5.6
+* MariaDB 10, MySQL compatible server
+* Caddy HTTP server
 
 For detailed list see the [features page][1].
 
@@ -34,6 +37,17 @@ Follow the appropriate instructions for your computer in one of the links below:
 * [Linux](http://docs.daspanel.com/help/install/linux)
 * [Windows](http://docs.daspanel.com/help/install/windows)
 * [Mac](http://docs.daspanel.com/help/install/mac)
+
+### Create sites
+
+* [Wordpress]()
+* [Grav]()
+* [Static HTML/Js]()
+
+### Services
+
+* [Database manager]()
+* [File manager]()
 
 ## Why Daspanel ?
 
