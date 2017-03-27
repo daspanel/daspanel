@@ -1,4 +1,4 @@
-<img src="img/daspanel-banner.png"/>
+<center><img src="img/daspanel-banner.png"/></center>
 
 Free, open-source, server agnostic, self-hosted web hosting control panel using Docker
 
