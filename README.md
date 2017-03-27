@@ -1,5 +1,7 @@
 # Daspanel
 
+<img src="img/daspanel-banner.png" width="400"/>
+
 Free, open-source, server agnostic, self-hosted web hosting control panel using Docker
 
 * Free software: MIT license
