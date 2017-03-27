@@ -12,14 +12,14 @@ services:
             - daspanel.env
     daspanel-services:
         image: daspanel/daspanel-services
-        volumes:
-            - /opt/daspanel/services
         networks:
             - backend
-        command:
-            - /bin/true
+        expose:
+            - "8080"
         depends_on:
             - daspanel-storage
+        env_file:
+            - daspanel.env
     daspanel-mail-catcher:
         image: daspanel/mailhog-mail-catcher
         volumes:
@@ -77,8 +77,6 @@ services:
         image: daspanel/caddy-http-server
         volumes:
             - ./data:/opt/daspanel/data
-        volumes_from:
-            - daspanel-services:ro
         networks:
             - frontend
             - backend
