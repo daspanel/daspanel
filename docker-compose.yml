@@ -23,11 +23,9 @@ services:
         env_file:
             - daspanel.env
     daspanel-api:
-        image: daspanel/api-server:latest
+        image: daspanel/svc-api:dev
         volumes:
             - ./data:/opt/daspanel/data
-            - /home/abner/Devel/abnerjacobsen/work/api-server:/opt/daspanel/apps/apiserver
-            - /home/abner/Devel/abnerjacobsen/work/api-server/container_data/opt/daspanel/conf-templates/caddy:/opt/daspanel/conf-templates/caddy
         networks:
             - frontend
             - backend
@@ -80,10 +78,9 @@ services:
         env_file:
             - daspanel.env
     daspanel-panel:
-        image: daspanel/panel:latest
+        image: daspanel/svc-panel:dev
         volumes:
             - ./data:/opt/daspanel/data
-            - /home/abner/Devel/abnerjacobsen/python/daspanel/panel:/opt/daspanel/apps/panel
         networks:
             - frontend
             - backend
