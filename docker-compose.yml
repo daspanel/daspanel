@@ -50,6 +50,8 @@ services:
             - daspanel.env
     daspanel-services:
         image: daspanel/daspanel-services:dev
+        volumes:
+            - ./data:/opt/daspanel/data
         networks:
             - backend
         expose:
