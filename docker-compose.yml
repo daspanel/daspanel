@@ -1,6 +1,7 @@
 version: '2'
 services:
     daspanel-lb:
+        restart: always
         image: daspanel/load-balancer-caddy:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -13,6 +14,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-redis:
+        restart: always
         image: daspanel/redis:dev
         networks:
             - backend
@@ -23,6 +25,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-api:
+        restart: always
         image: daspanel/svc-api:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -39,6 +42,7 @@ services:
         expose:
             - "8080"
     daspanel-storage:
+        restart: always
         image: daspanel/minio-fileserver:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -49,6 +53,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-services:
+        restart: always
         image: daspanel/daspanel-services:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -59,6 +64,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-mail-catcher:
+        restart: always
         image: daspanel/mailhog-mail-catcher:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -68,6 +74,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-mysql:
+        restart: always
         image: daspanel/mariadb:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -80,6 +87,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-panel:
+        restart: always
         image: daspanel/svc-panel:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -94,6 +102,7 @@ services:
         expose:
             - "5000"
     daspanel-engine-php56:
+        restart: always
         image: daspanel/engine-php56:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -104,6 +113,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-engine-php70:
+        restart: always
         image: daspanel/engine-php70:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -114,6 +124,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-engine-php71:
+        restart: always
         image: daspanel/engine-php71:dev
         volumes:
             - ./data:/opt/daspanel/data
@@ -124,6 +135,7 @@ services:
         env_file:
             - daspanel.env
     daspanel-engine-static:
+        restart: always
         image: daspanel/engine-static:dev
         volumes:
             - ./data:/opt/daspanel/data
