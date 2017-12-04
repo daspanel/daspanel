@@ -11,6 +11,8 @@ services:
         ports:
             - "80:80"
             - "443:443"
+            - "3000:3000"
+            - "8080:8080"
         env_file:
             - daspanel.env
     daspanel-redis:
@@ -108,6 +110,8 @@ services:
             - backend
         expose:
             - "443"
+            - "13000"
+            - "18080"
         env_file:
             - daspanel.env
     daspanel-engine-php70:
@@ -119,6 +123,8 @@ services:
             - backend
         expose:
             - "443"
+            - "13000"
+            - "18080"
         env_file:
             - daspanel.env
     daspanel-engine-php71:
@@ -130,6 +136,8 @@ services:
             - backend
         expose:
             - "443"
+            - "13000"
+            - "18080"
         env_file:
             - daspanel.env
     daspanel-engine-static:
@@ -141,6 +149,8 @@ services:
             - backend
         expose:
             - "443"
+            - "13000"
+            - "18080"
         env_file:
             - daspanel.env
 networks:  
